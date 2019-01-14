@@ -1,33 +1,33 @@
+
+
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 body{
 	background-color: #f4f4f4;
-	color: #555;
+	color: ##555;
 	font-family: 'Roboto Condensed', Arial, Helvetica, san-serif;
 	font-size: 16px;
 	line-height: 1.6em;
 	height: auto;
 	margin: 0;
-
 }
 
 div.navtop{
 	position: fixed;
-	width: 50px;
-	height: 35px;
+	width: 15px;
+	height: 20px;
 	background-color: red;
 	z-index: 100;
 	font-size: 18px;
-	padding: 20px;
-	margin: 0 0 0 40px;
-	right: 10px;
+	padding: 10px;
+	right: 0px;
 	opacity: 0.5;
 	overflow: hidden;
+	text-align: center;
 }
 
 .move-right{
-	padding: 0 0 0 10px;
 	cursor: pointer;
 }
 
@@ -41,7 +41,7 @@ div.navtop{
 }
 
 .container{
-	max-width: 80%;
+	max-width: 95%;
 	margin: auto;
 /*	overflow: hidden;   */
 	position: block;
@@ -70,7 +70,7 @@ header#main-header h1{
 #main-header{
 	float: left;
 	width: 30%;
-	padding: 0 30px;
+	padding: 0 15px;
 	box-sizing: border-box;
 }
 
@@ -79,7 +79,7 @@ header#main-header h1{
 	width: 70%;
 /*	background: #333; */
 	color: #fff;
-	padding: 10px;
+	padding: 0px;
 	box-sizing: border-box;
 }
 
@@ -119,7 +119,7 @@ li{
 }
 
 .showcase{
-	background-image: url("./images/g7.jpg"); */
+	background-image: url("./images/g7.jpg");
 	background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -248,25 +248,23 @@ img.menu-img{
 	margin-top:40px;
 }
 
+
 @media screen and (max-width: 850px){
   .showcase p.quote {
     padding-top: 5px;
   }
 
   .showcase h1 {
-
 	font-size: 2.0rem;
     padding-top: 15px;
   }
 
-	/*Top movement animation button*/
+  /*Up down animation nav button*/
 	div.navtop{
 		margin: 0 0 0 20px;
 		right: 0px;
-
-		height: 30px;
-		width: 35px;
-
+		width: 15px;
+		height: 20px;
 	}
 
 	.text-deco{
@@ -279,20 +277,15 @@ img.menu-img{
 		cursor: pointer;
 	}
 
-
 }
 
 @media screen and (max-width: 600px){
-
-
-
-
 
   .showcase p.quote {
     padding-top: 10px;
   }
 
-  .top-nav a:not(:first-child) {
+  	.top-nav a:not(:first-child) {
     display: none;
 
   }
@@ -314,7 +307,7 @@ img.menu-img{
 
 	.showcase h1{
 		height: 100vh;
-		font-size: 1.5rem;
+		font-size: 1.6rem;
 		padding: 35px 50px 50px 50px;
 	}
 
@@ -346,20 +339,17 @@ img.menu-img{
 
 	}
 
-
-
 	.footer-4{
 		width: 100%;
 		float: none;
 	}
 
 	img.menu-img{
-	   	height: 30vh;
+	   	height: 40vh;
     }
 
 	article.column div.scroll{
 	    height: 20vh;
-
 	}
 
 	.re-caption{
@@ -370,33 +360,46 @@ img.menu-img{
 	article.column div.re-scroll{
 	    height: 10vh;
 	}
-
 }
 
+
+@media screen and (max-width: 450px){
+	.showcase h1 {
+	  font-size: 1.4rem;
+    padding-top: 15px;
+  }
+}
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 
 @media screen and (max-width: 600px) {
-  .top-nav.responsive {position: relative;}
+  .top-nav.responsive {position: relative; }
+
+  .top-nav.responsive ul{
+  	position: relative;
+  	left: 0;
+  	top: 0;
+  	display: block;
+  	margin: 0;
+  }
+
   .top-nav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+
    }
+
   .top-nav.responsive a {
-    float: none;
     display: block;
-    text-align: left;
-    padding-left: 45px;
-
+    text-align: center;
+    padding-left: 0px;
+    z-index: 10;
+    height: 40px;
+    background-color: gold;
   }
-}
 
-@media screen and (max-width: 450px) {
-  .showcase h1{
 
-    font-size: 1.2rem;
-  }
 }
 
 .btn{
