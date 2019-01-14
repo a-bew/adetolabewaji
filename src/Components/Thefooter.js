@@ -1,7 +1,24 @@
 import React, { Component } from 'react';
+import Textarea from "./forms/requestForm/Textarea";
+import Email from "./forms/requestForm/Email";
 
 class Thefooter extends Component {
+   /* Select option property */
+  static defaultProps = {
+      categoriess : ["Data Analysis", "Machine learning", "Web Design", "Web Development", "Graphic Designs"]
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log('submitting form. We need to validate it!');
+  }
+
   render() {
+    let categoryOptions =  this.props.categoriess.map(category => {
+  return <option key = {category} value={category}>{category}</option>
+})
+
     return (
       <div className="Thefooter">
         <div className="main-footer">
@@ -9,7 +26,7 @@ class Thefooter extends Component {
       			<div className="footer-4"> {/*col-md-4 */}
       				<div className = "header">
           				<h2>About Adetola</h2>
-      	            </div>
+      	          </div>
       				<p>He is a researcher, programmer and teacher. He has built academic software.and currently work at CodeLagos where He mentors upcoming software developers in Lagos State. He believe in education and human development through science and technological skills development. He like visiting new places and love to ponder on nature's beauty and wonder.</p>
       			</div>
 
@@ -17,28 +34,23 @@ class Thefooter extends Component {
       				<div className = "header">
       				    <h2 id="contact-us">Contact Us</h2>
       				</div>
-      				<form action="#" method="post" className="contact">
+      				<form action="#contact-us" method="post" className="contact" data-netlify="true" onSubmit={this.handleSubmit}>
       					<p>
-                  <label>Name:</label><br/>
-      						<input type="text" ref="name" className="" />
+                  <label htmlFor="name">Name:</label><br/>
+      						<input type="text" ref="name" className="" name="name"/>
       					</p>
-                          <p><label>Area of Interest</label><br/>
-                          	<select>
-      	                    	<option>Data Analysis</option>
-      	                    	<option>Machine learning</option>
-      	                    	<option>Web Design</option>
-      	                    	<option>Web Development</option>
-      	                    	<option>Graphic design</option>
-                              </select>
-                          </p>
+                <p><label htmlFor="role">Area of Interest</label><br/>
+                <select ref="role">
+                    {categoryOptions}
+                </select>
+                </p>
       					<p>
-      					    <label>E-mail</label><br/>
-          					<input type="email" name="email" placeholder="Your email..." required="" className="input-i"/>
+      					    <label htmlFor="email">E-mail</label><br/>
+          					<Email />
           			</p>
           				<p><label>Message:</label><br/>
-      						<textarea className="input-i" cols="30" rows="7">
+                  <Textarea />
 
-      						</textarea>
       				    </p>
       					<input className="button-submit" type="submit" value="Submit"/>
       				</form>

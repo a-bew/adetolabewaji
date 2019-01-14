@@ -93,7 +93,7 @@ class Contents extends Component {
 		                </div>
 		            </article>
 		            <article className="column">
-	                <img src={ getImage.images[5].phone } alt= { getImage.images[6].desc } className="menu-img"/>
+	                <img src={ getImage.images[6].imageAnal } alt= { getImage.images[6].desc } className="menu-img"/>
                   <div className="caption">
                       <h3>Consultancy and Training</h3>
                       <div className="scroll re-scroll">Always available at your service. Contact us today.</div>
